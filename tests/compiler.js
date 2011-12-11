@@ -10,7 +10,7 @@ function formatting(template) {
       var args = Array.prototype.slice.call(arguments);
       return {
         is: function (expectation) {
-          equals(expectation, Formatter.vformat(template, args));
+          equals(Formatter.vformat(template, args), expectation);
         },
         raises: function (errorType) {
           var didRaise = false,
