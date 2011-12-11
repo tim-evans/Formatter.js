@@ -350,6 +350,10 @@ test("`%F` is equivalent to `%Y-%m-%d`", function () {
   formatting("{:%F}").provided(jan).is(Formatter.format("{:%Y-%m-%d}", jan));
 });
 
+test("`%r` is equivalent to `%I:%M:%S %p`", function () {
+  formatting("{:%r}").provided(jan).is(Formatter.format("{:%I:%M:%S %p}", jan));
+});
+
 test("`%R` is equivalent to `%H:%M`", function () {
   formatting("{:%R}").provided(jan).is(Formatter.format("{:%R}", jan));
 });
