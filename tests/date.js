@@ -77,6 +77,16 @@ test("`%y` will return the year without the century", function () {
   formatting("{:%y}").provided(jan).is("12");
 });
 
+test("`%G` will return the year with the century", function () {
+  formatting("{:%G}").provided(jan).is("2011");
+  formatting("{:%G}").provided(mar).is("2012");
+});
+
+test("`%g` will return the year without the century", function () {
+  formatting("{:%g}").provided(jan).is("11");
+  formatting("{:%g}").provided(mar).is("12");
+});
+
 
 // Month
 test("`%b` will return the abbreviated month of the year", function () {
@@ -143,6 +153,16 @@ test("`%W` will return the week of the year (starting with the first Monday)", f
   formatting("{:%W}").provided(feb).is("05");
   formatting("{:%W}").provided(may).is("20");
   formatting("{:%W}").provided(jun).is("23");
+});
+
+test("`%V` will return the week of the year (according to ISO 8061)", function () {
+  formatting("{:%V}").provided(jan).is("52");
+  formatting("{:%V}").provided(mar).is("10");
+  formatting("{:%V}").provided(jul).is("27");
+  formatting("{:%V}").provided(apr).is("14");
+  formatting("{:%V}").provided(feb).is("05");
+  formatting("{:%V}").provided(may).is("20");
+  formatting("{:%V}").provided(jun).is("23");
 });
 
 // Day of the year / month
