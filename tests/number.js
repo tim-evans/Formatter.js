@@ -1,3 +1,4 @@
+if (QUnit) { module = QUnit.module; }
 module("Number specification");
 
 // Test helper
