@@ -126,13 +126,13 @@ test("Formatting templates can be embedded in format specifiers", function () {
       template = '{:{}}',
       didCall = false;
 
-  formatting(template).provided(spec, {
+  formatting(template).provided({
     toFormat: function (specifier) {
       equals(spec, specifier, "The format specifier should match");
       didCall = true;
       return 'def';
     }
-  }).is('def');
+  }, spec).is('def');
 
   ok(didCall);
 });
