@@ -49,7 +49,7 @@ test("Setting the maximum width of a string", function () {
 
 test("Setting the minimum width of a string", function () {
   formatting("{:2}").provided("hello").is("hello");
-  formatting("{:9}").provided("hello").is("    hello");
+  formatting("{:9}").provided("hello").is("hello    ");
 });
 
 test("Using `<` will left align a string", function () {
